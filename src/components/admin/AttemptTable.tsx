@@ -14,10 +14,10 @@ const STATUS: Record<Attempt["status"], string> = {
   abandoned: "bg-slate-500/12 muted",
 };
 
-export function AttemptTable({ rows }: { rows: Row[] }) {
+export function AttemptTable({ rows, onChanged }: { rows: Row[]; onChanged: () => void }) {
   const [q, setQ] = useState("");
   const [status, setStatus] = useState<"all" | Attempt["status"]>("all");
-  const { run, error } = useMutation();
+  const { run, error } = useMutation(onChanged);
 
   const shown = useMemo(() => {
     const t = q.trim().toLowerCase();
@@ -74,7 +74,7 @@ export function AttemptTable({ rows }: { rows: Row[] }) {
                     className="btn-ghost size-9 p-0 text-rose-500"
                     label="Delete attempt"
                     message="Delete this attempt?"
-                    onConfirm={() => run(`/api/admin/attempts/${a.id}`, "DELETE")}
+                    onConfirm={() => run("admin.attempt.delete", { id: a.id })}
                   >
                     <Trash className="size-4" />
                   </ConfirmButton>

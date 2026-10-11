@@ -3,7 +3,8 @@ import { Search } from "lucide-react";
 import { useMemo, useState } from "react";
 import { FOCUS } from "@/lib/labels";
 import type { Focus } from "@/lib/types";
-import { MissionCard, type MissionSummary } from "./MissionCard";
+import type { MissionSummary } from "@/lib/services";
+import { MissionCard } from "./MissionCard";
 
 const FILTERS: (Focus | "all")[] = ["all", "grammar", "vocabulary", "speaking", "knowledge"];
 

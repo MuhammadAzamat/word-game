@@ -3,26 +3,14 @@ import { ArrowRight, Check, Clock, Home, Lightbulb, RotateCcw, Volume2, X } from
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Stars } from "@/components/Stars";
+import { withBase } from "@/lib/client";
 import { formatDuration } from "@/lib/labels";
 import { canSpeak, speak } from "@/lib/speech";
-import type { Attempt, Direction } from "@/lib/types";
+import type { OpResult } from "@/lib/services";
 import { Confetti } from "./Confetti";
 import { SpeakPractice } from "./SpeakPractice";
 
-export interface ResultData {
-  attempt: Attempt;
-  stars: number;
-  review: {
-    clueId: string;
-    number: number;
-    direction: Direction;
-    clue: string;
-    answer: string;
-    note: string;
-    example: string;
-    correct: boolean;
-  }[];
-}
+export type ResultData = OpResult<"attempt.submit">;
 
 const MESSAGES = ["Keep practising!", "Good effort!", "Great job!", "Perfect mission!"];
 
@@ -83,11 +71,11 @@ export function Results({
             <Stat icon={<Lightbulb className="size-4 text-amber-500" />} label="Hints" value={String(attempt.hintsUsed)} sub={`${attempt.checksUsed} checks`} />
           </div>
           <div className="mt-7 flex flex-wrap justify-center gap-2">
-            <a href={`/play/${missionId}`} className="btn-outline">
+            <a href={withBase(`/play?id=${missionId}`)} className="btn-outline">
               <RotateCcw className="size-4" /> Play again
             </a>
             {nextMission ? (
-              <a href={`/play/${nextMission.id}`} className="btn-primary">
+              <a href={withBase(`/play?id=${nextMission.id}`)} className="btn-primary">
                 Next: {nextMission.title} <ArrowRight className="size-4" />
               </a>
             ) : (

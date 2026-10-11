@@ -1,47 +1,27 @@
+"use client";
 import { Flame, Star, Target, Trophy } from "lucide-react";
 import Link from "next/link";
+import { Suspense } from "react";
+import { ErrorState, PageSpinner, RequireAuth, useRpc } from "@/components/session";
 import { Stars } from "@/components/Stars";
-import { requireUser } from "@/lib/auth";
 import { starsFor } from "@/lib/crossword";
-import { getAttemptsForUser, getBestScores, getCategories, getMissions } from "@/lib/db";
 import { FOCUS, formatDate, formatDuration } from "@/lib/labels";
-import type { Focus } from "@/lib/types";
 
-export const dynamic = "force-dynamic";
-export const metadata = { title: "My progress" };
-
-/** Consecutive days (ending today or yesterday) with at least one completed mission. */
-function streak(dates: string[]) {
-  const days = new Set(dates.map((d) => d.slice(0, 10)));
-  const day = new Date();
-  if (!days.has(day.toISOString().slice(0, 10))) day.setUTCDate(day.getUTCDate() - 1);
-  let n = 0;
-  while (days.has(day.toISOString().slice(0, 10))) {
-    n++;
-    day.setUTCDate(day.getUTCDate() - 1);
-  }
-  return n;
+export default function ProfilePage() {
+  return (
+    <Suspense fallback={<PageSpinner />}>
+      <RequireAuth>
+        <Profile />
+      </RequireAuth>
+    </Suspense>
+  );
 }
 
-export default async function ProfilePage() {
-  const user = await requireUser("/profile");
-  const [attempts, best, missions, categories] = await Promise.all([
-    getAttemptsForUser(user.id),
-    getBestScores(user.id),
-    getMissions({ includeDrafts: true }),
-    getCategories(),
-  ]);
-  const missionById = new Map(missions.map((m) => [m.id, m]));
-  const catById = new Map(categories.map((c) => [c.id, c]));
-  const completed = attempts.filter((a) => a.status === "completed");
-  const stars = [...best.values()].reduce((s, v) => s + starsFor(v), 0);
-  const totalWords = completed.reduce((s, a) => s + a.correctWords, 0);
-
-  const focusProgress = (Object.keys(FOCUS) as Focus[]).map((f) => {
-    const pool = missions.filter((m) => m.published && m.focus === f);
-    const done = pool.filter((m) => best.has(m.id)).length;
-    return { focus: f, done, total: pool.length };
-  });
+function Profile() {
+  const { data, error, reload } = useRpc("profile");
+  if (error) return <ErrorState error={error} onRetry={reload} />;
+  if (!data) return <PageSpinner />;
+  const { user } = data;
 
   return (
     <div className="space-y-8">
@@ -57,10 +37,10 @@ export default async function ProfilePage() {
 
       <section className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         {[
-          { icon: Trophy, label: "Missions completed", value: best.size, color: "text-brand-500" },
-          { icon: Star, label: "Stars earned", value: stars, color: "text-amber-500" },
-          { icon: Target, label: "Words solved", value: totalWords, color: "text-emerald-500" },
-          { icon: Flame, label: "Day streak", value: streak(completed.map((a) => a.finishedAt!)), color: "text-rose-500" },
+          { icon: Trophy, label: "Missions completed", value: data.completed, color: "text-brand-500" },
+          { icon: Star, label: "Stars earned", value: data.stars, color: "text-amber-500" },
+          { icon: Target, label: "Words solved", value: data.wordsSolved, color: "text-emerald-500" },
+          { icon: Flame, label: "Day streak", value: data.streak, color: "text-rose-500" },
         ].map((s, i) => (
           <div key={s.label} className="card p-5 animate-rise" style={{ animationDelay: `${i * 50}ms` }}>
             <s.icon className={`size-5 ${s.color}`} />
@@ -73,7 +53,7 @@ export default async function ProfilePage() {
       <section className="card p-6">
         <h2 className="mb-4 font-display text-lg font-bold">Skills</h2>
         <div className="grid gap-4 sm:grid-cols-2">
-          {focusProgress.map((f) => (
+          {data.skills.map((f) => (
             <div key={f.focus}>
               <div className="mb-1.5 flex justify-between text-sm">
                 <span className="font-medium">
@@ -96,7 +76,7 @@ export default async function ProfilePage() {
 
       <section className="card overflow-hidden">
         <h2 className="p-6 pb-3 font-display text-lg font-bold">Recent attempts</h2>
-        {completed.length === 0 ? (
+        {data.recent.length === 0 ? (
           <div className="px-6 pb-8 text-sm muted">
             No finished missions yet.{" "}
             <Link href="/#missions" className="font-semibold text-brand-500 hover:underline">
@@ -105,27 +85,23 @@ export default async function ProfilePage() {
           </div>
         ) : (
           <ul>
-            {completed.slice(0, 25).map((a) => {
-              const m = missionById.get(a.missionId);
-              const c = m && catById.get(m.categoryId);
-              return (
-                <li key={a.id} className="border-t hairline">
-                  <Link href={`/play/${a.missionId}`} className="flex items-center gap-4 px-6 py-3.5 transition hover:bg-black/[.03] dark:hover:bg-white/5">
-                    <span className="text-2xl">{c?.icon ?? "🧩"}</span>
-                    <div className="min-w-0 flex-1">
-                      <div className="truncate font-medium">{m?.title ?? "Deleted mission"}</div>
-                      <div className="text-xs muted">
-                        {formatDate(a.finishedAt!)} · {a.correctWords}/{a.totalWords} words · {formatDuration(a.durationSec)}
-                      </div>
+            {data.recent.map((a) => (
+              <li key={a.id} className="border-t hairline">
+                <Link href={`/play?id=${a.missionId}`} className="flex items-center gap-4 px-6 py-3.5 transition hover:bg-black/[.03] dark:hover:bg-white/5">
+                  <span className="text-2xl">{a.icon}</span>
+                  <div className="min-w-0 flex-1">
+                    <div className="truncate font-medium">{a.missionTitle}</div>
+                    <div className="text-xs muted">
+                      {formatDate(a.finishedAt!)} · {a.correctWords}/{a.totalWords} words · {formatDuration(a.durationSec)}
                     </div>
-                    <div className="text-right">
-                      <div className="font-display font-bold tabular-nums">{a.score}</div>
-                      <Stars count={starsFor(a.score)} size="size-3" />
-                    </div>
-                  </Link>
-                </li>
-              );
-            })}
+                  </div>
+                  <div className="text-right">
+                    <div className="font-display font-bold tabular-nums">{a.score}</div>
+                    <Stars count={starsFor(a.score)} size="size-3" />
+                  </div>
+                </Link>
+              </li>
+            ))}
           </ul>
         )}
       </section>

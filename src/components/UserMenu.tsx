@@ -3,12 +3,15 @@ import { LogOut, Shield, User as UserIcon } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { rpc } from "@/lib/client";
 import type { PublicUser } from "@/lib/types";
+import { useSession } from "./session";
 
 export function UserMenu({ user }: { user: PublicUser }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const { refresh } = useSession();
 
   useEffect(() => {
     const close = (e: MouseEvent) => ref.current && !ref.current.contains(e.target as Node) && setOpen(false);
@@ -17,9 +20,9 @@ export function UserMenu({ user }: { user: PublicUser }) {
   }, []);
 
   async function logout() {
-    await fetch("/api/auth/logout", { method: "POST" });
+    await rpc("logout");
+    await refresh();
     router.push("/");
-    router.refresh();
   }
 
   return (

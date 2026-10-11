@@ -2,6 +2,7 @@
 import { AlertTriangle, ArrowDown, ArrowUp, ClipboardPaste, Loader2, Plus, Save, Trash } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { rpc } from "@/lib/client";
 import { DIFFICULTY, FOCUS } from "@/lib/labels";
 import type { Category, CrosswordLayout, Difficulty, Focus, Level, Mission, MissionWord } from "@/lib/types";
 import { Modal } from "./Modal";
@@ -47,12 +48,8 @@ export function MissionEditor({ categories, mission }: { categories: Category[];
   const answersKey = d.words.map((w) => w.answer).join("|");
   useEffect(() => {
     const t = setTimeout(async () => {
-      const res = await fetch("/api/admin/missions/preview", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ words: d.words.map((w) => ({ answer: w.answer })) }),
-      });
-      if (res.ok) setPreview(await res.json());
+      const res = await rpc("admin.preview", { words: d.words.map((w) => ({ answer: w.answer })) }).catch(() => null);
+      if (res) setPreview(res);
     }, 350);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -62,10 +59,10 @@ export function MissionEditor({ categories, mission }: { categories: Category[];
 
   async function save(e: React.FormEvent) {
     e.preventDefault();
-    const res = await run<Mission>(mission ? `/api/admin/missions/${mission.id}` : "/api/admin/missions", mission ? "PUT" : "POST", d);
+    const res = await run("admin.mission.save", { id: mission?.id, data: d });
     if (!res) return;
     setSaved(true);
-    if (!mission) router.push(`/admin/missions/${res.id}`);
+    if (!mission) router.push(`/admin/missions/edit?id=${res.id}`);
   }
 
   const wordError = (i: number, f: string) => fields[`words.${i}.${f}`];

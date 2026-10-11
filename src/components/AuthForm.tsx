@@ -3,7 +3,9 @@ import { Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
+import { IS_STATIC, rpc, RpcError } from "@/lib/client";
 import { Logo } from "./Logo";
+import { useSession } from "./session";
 
 export function AuthForm({ mode }: { mode: "login" | "register" }) {
   const router = useRouter();
@@ -13,25 +15,23 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
   const [error, setError] = useState<string | null>(null);
   const [fields, setFields] = useState<Record<string, string>>({});
   const [busy, setBusy] = useState(false);
+  const { refresh } = useSession();
 
   async function submit(form: FormData) {
     setBusy(true);
     setError(null);
     setFields({});
-    const res = await fetch(`/api/auth/${mode}`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(Object.fromEntries(form)),
-    });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) {
-      setError(data.error ?? "Something went wrong");
-      setFields(data.fields ?? {});
+    try {
+      await rpc(mode, Object.fromEntries(form));
+    } catch (e) {
+      const err = e instanceof RpcError ? e : new RpcError(500, "Something went wrong");
+      setError(err.message);
+      setFields(err.fields);
       setBusy(false);
       return;
     }
+    await refresh();
     router.push(safeNext);
-    router.refresh();
   }
 
   const isLogin = mode === "login";
@@ -74,6 +74,9 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
           Demo learner: <b>demo@wordgame.dev</b> / <b>demo1234</b>
           <br />
           Demo admin: <b>admin@wordgame.dev</b> / <b>admin123</b>
+          {IS_STATIC && (
+            <p className="mt-2">This demo runs entirely in your browser: accounts and progress are saved on this device only.</p>
+          )}
         </div>
       )}
     </div>

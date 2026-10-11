@@ -12,10 +12,10 @@ type Row = Pick<Mission, "id" | "title" | "categoryId" | "focus" | "difficulty" 
   plays: number;
 };
 
-export function MissionTable({ rows, categories }: { rows: Row[]; categories: Category[] }) {
+export function MissionTable({ rows, categories, onChanged }: { rows: Row[]; categories: Category[]; onChanged: () => void }) {
   const [q, setQ] = useState("");
   const [cat, setCat] = useState("all");
-  const { run, error } = useMutation();
+  const { run, error } = useMutation(onChanged);
   const catById = new Map(categories.map((c) => [c.id, c]));
 
   const shown = useMemo(() => {
@@ -35,7 +35,7 @@ export function MissionTable({ rows, categories }: { rows: Row[]; categories: Ca
             </option>
           ))}
         </select>
-        <Link href="/admin/missions/new" className="btn-primary sm:ml-auto">
+        <Link href="/admin/missions/edit" className="btn-primary sm:ml-auto">
           <Plus className="size-4" /> New mission
         </Link>
       </div>
@@ -59,7 +59,7 @@ export function MissionTable({ rows, categories }: { rows: Row[]; categories: Ca
               return (
                 <tr key={m.id} className="border-t hairline">
                   <td className="p-4">
-                    <Link href={`/admin/missions/${m.id}`} className="font-medium hover:text-brand-500">
+                    <Link href={`/admin/missions/edit?id=${m.id}`} className="font-medium hover:text-brand-500">
                       {m.title}
                     </Link>
                     <div className="text-xs muted">
@@ -80,7 +80,7 @@ export function MissionTable({ rows, categories }: { rows: Row[]; categories: Ca
                       role="switch"
                       aria-checked={m.published}
                       aria-label={m.published ? "Unpublish" : "Publish"}
-                      onClick={() => run(`/api/admin/missions/${m.id}`, "PATCH", { published: !m.published })}
+                      onClick={() => run("admin.mission.publish", { id: m.id, published: !m.published })}
                       className={`relative h-6 w-11 rounded-full transition ${m.published ? "bg-emerald-500" : "bg-slate-300 dark:bg-slate-600"}`}
                     >
                       <span className={`absolute top-0.5 size-5 rounded-full bg-white shadow transition-all ${m.published ? "left-[22px]" : "left-0.5"}`} />
@@ -88,17 +88,17 @@ export function MissionTable({ rows, categories }: { rows: Row[]; categories: Ca
                   </td>
                   <td className="p-4">
                     <div className="flex justify-end">
-                      <Link href={`/play/${m.id}`} className="btn-ghost size-9 p-0" aria-label="Play" title="Play">
+                      <Link href={`/play?id=${m.id}`} className="btn-ghost size-9 p-0" aria-label="Play" title="Play">
                         <Play className="size-4" />
                       </Link>
-                      <Link href={`/admin/missions/${m.id}`} className="btn-ghost size-9 p-0" aria-label="Edit" title="Edit">
+                      <Link href={`/admin/missions/edit?id=${m.id}`} className="btn-ghost size-9 p-0" aria-label="Edit" title="Edit">
                         <Pencil className="size-4" />
                       </Link>
                       <ConfirmButton
                         className="btn-ghost size-9 p-0 text-rose-500"
                         label="Delete mission"
                         message={`Delete “${m.title}” and all its attempts?`}
-                        onConfirm={() => run(`/api/admin/missions/${m.id}`, "DELETE")}
+                        onConfirm={() => run("admin.mission.delete", { id: m.id })}
                       >
                         <Trash className="size-4" />
                       </ConfirmButton>

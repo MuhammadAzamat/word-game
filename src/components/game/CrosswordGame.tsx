@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { rpc } from "@/lib/client";
 import { formatDuration } from "@/lib/labels";
 import { canSpeak, speak } from "@/lib/speech";
 import type { Direction, PublicPuzzle } from "@/lib/types";
@@ -30,6 +31,7 @@ interface Props {
 }
 
 const k = (r: number, c: number) => `${r},${c}`;
+const errorMessage = (e: unknown, fallback: string) => (e instanceof Error && e.message) || fallback;
 
 function cellsOf(clue: Clue) {
   return Array.from({ length: clue.length }, (_, i) =>
@@ -87,14 +89,11 @@ export function CrosswordGame({ missionId, title, category, timeLimit, puzzle, n
   // Start an attempt once (guarded against StrictMode double effects).
   const start = useCallback(async () => {
     setStartError(null);
-    const res = await fetch("/api/attempts", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ missionId }),
-    });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) return setStartError(data.error ?? "Could not start the mission");
-    setAttemptId(data.attemptId);
+    try {
+      setAttemptId((await rpc("attempt.start", { missionId })).attemptId);
+    } catch (e) {
+      setStartError(errorMessage(e, "Could not start the mission"));
+    }
   }, [missionId]);
 
   useEffect(() => {
@@ -114,14 +113,9 @@ export function CrosswordGame({ missionId, title, category, timeLimit, puzzle, n
     if (!attemptId) return;
     setBusy("submit");
     setConfirmSubmit(false);
-    const res = await fetch(`/api/attempts/${attemptId}/submit`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ entries }),
-    });
-    const data = await res.json().catch(() => ({}));
+    const data = await rpc("attempt.submit", { attemptId, entries }).catch((e) => (flash(errorMessage(e, "Could not submit")), null));
     setBusy(null);
-    if (!res.ok) return flash(data.error ?? "Could not submit");
+    if (!data) return;
     setResult(data);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [attemptId, entries, flash]);
@@ -230,14 +224,9 @@ export function CrosswordGame({ missionId, title, category, timeLimit, puzzle, n
   async function revealLetter() {
     if (!attemptId || locked.has(active)) return;
     setBusy("hint");
-    const res = await fetch(`/api/attempts/${attemptId}/hint`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ cell: active }),
-    });
-    const data = await res.json().catch(() => ({}));
+    const data = await rpc("attempt.hint", { attemptId, cell: active }).catch((e) => (flash(errorMessage(e, "Hint failed")), null));
     setBusy(null);
-    if (!res.ok) return flash(data.error ?? "Hint failed");
+    if (!data) return;
     const cell = active;
     setEntries((e) => ({ ...e, [cell]: data.letter }));
     setLocked((l) => new Set(l).add(cell));
@@ -250,14 +239,9 @@ export function CrosswordGame({ missionId, title, category, timeLimit, puzzle, n
   async function checkGrid() {
     if (!attemptId) return;
     setBusy("check");
-    const res = await fetch(`/api/attempts/${attemptId}/check`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ entries }),
-    });
-    const data = await res.json().catch(() => ({}));
+    const data = await rpc("attempt.check", { attemptId, entries }).catch((e) => (flash(errorMessage(e, "Check failed")), null));
     setBusy(null);
-    if (!res.ok) return flash(data.error ?? "Check failed");
+    if (!data) return;
     setChecks(data.checksUsed);
     setWrong(new Set(data.wrong));
     const filledCount = Object.values(entries).filter(Boolean).length;
@@ -284,7 +268,7 @@ export function CrosswordGame({ missionId, title, category, timeLimit, puzzle, n
   return (
     <div className="animate-rise">
       <div className="mb-5 flex flex-wrap items-center gap-3">
-        <Link href={`/categories/${category.slug}`} className="btn-ghost -ml-3">
+        <Link href={`/category?slug=${category.slug}`} className="btn-ghost -ml-3">
           <ArrowLeft className="size-4" /> {category.icon} {category.name}
         </Link>
         <div className="ml-auto flex items-center gap-2">

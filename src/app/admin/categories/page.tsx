@@ -1,16 +1,14 @@
+"use client";
 import { CategoryManager } from "@/components/admin/CategoryManager";
 import { PageHeader } from "@/components/admin/PageHeader";
-import { getCategories, readAll } from "@/lib/db";
+import { ErrorState, PageSpinner, useRpc } from "@/components/session";
 
-export const metadata = { title: "Categories" };
-
-export default async function AdminCategories() {
-  const [categories, missions] = await Promise.all([getCategories(), readAll("missions")]);
-  const rows = categories.map((c) => ({ ...c, missions: missions.filter((m) => m.categoryId === c.id).length }));
+export default function AdminCategories() {
+  const { data, error, reload } = useRpc("admin.categories");
   return (
     <>
       <PageHeader title="Categories" subtitle="Group missions into themes shown on the home page." />
-      <CategoryManager rows={rows} />
+      {error ? <ErrorState error={error} onRetry={reload} /> : !data ? <PageSpinner /> : <CategoryManager rows={data} onChanged={reload} />}
     </>
   );
 }

@@ -10,16 +10,16 @@ const EMPTY = { name: "", slug: "", description: "", icon: "📚", color: "#6366
 
 const slugify = (s: string) => s.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
-export function CategoryManager({ rows }: { rows: Row[] }) {
+export function CategoryManager({ rows, onChanged }: { rows: Row[]; onChanged: () => void }) {
   const [editing, setEditing] = useState<Partial<Category> | null>(null);
-  const { run, busy, error, fields, setError } = useMutation();
-  const del = useMutation();
+  const { run, busy, error, fields, setError } = useMutation(onChanged);
+  const del = useMutation(onChanged);
 
   async function save(e: React.FormEvent) {
     e.preventDefault();
     if (!editing) return;
     const { id, ...body } = editing;
-    const ok = await run(id ? `/api/admin/categories/${id}` : "/api/admin/categories", id ? "PUT" : "POST", body);
+    const ok = await run("admin.category.save", { id, data: body });
     if (ok) setEditing(null);
   }
 
@@ -53,7 +53,7 @@ export function CategoryManager({ rows }: { rows: Row[] }) {
                   className="btn-ghost size-9 p-0 text-rose-500"
                   label="Delete"
                   message={`Delete category “${c.name}”?`}
-                  onConfirm={() => del.run(`/api/admin/categories/${c.id}`, "DELETE")}
+                  onConfirm={() => del.run("admin.category.delete", { id: c.id })}
                 >
                   <Trash className="size-4" />
                 </ConfirmButton>

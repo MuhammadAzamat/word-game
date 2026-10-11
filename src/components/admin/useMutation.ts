@@ -1,32 +1,27 @@
 "use client";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { rpc, RpcError } from "@/lib/client";
+import type { OpName, OpResult } from "@/lib/services";
 
-/** fetch + JSON + router.refresh(), with error state for admin forms. */
-export function useMutation() {
-  const router = useRouter();
+/** Runs an admin operation with busy/error state, then calls onDone (usually a reload). */
+export function useMutation(onDone?: () => void) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [fields, setFields] = useState<Record<string, string>>({});
 
-  async function run<T = unknown>(url: string, method: string, body?: unknown): Promise<T | null> {
+  async function run<O extends OpName>(op: O, args?: unknown): Promise<OpResult<O> | null> {
     setBusy(true);
     setError(null);
     setFields({});
     try {
-      const res = await fetch(url, {
-        method,
-        headers: body ? { "content-type": "application/json" } : undefined,
-        body: body ? JSON.stringify(body) : undefined,
-      });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        setError(data.error ?? "Request failed");
-        setFields(data.fields ?? {});
-        return null;
-      }
-      router.refresh();
-      return data as T;
+      const data = await rpc(op, args);
+      onDone?.();
+      return data as OpResult<O>;
+    } catch (e) {
+      const err = e instanceof RpcError ? e : new RpcError(500, "Request failed");
+      setError(err.message);
+      setFields(err.fields);
+      return null;
     } finally {
       setBusy(false);
     }

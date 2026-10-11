@@ -1,18 +1,16 @@
+"use client";
 import { ArrowRight, BookOpen, Globe, Mic, Sparkles, Trophy } from "lucide-react";
 import Link from "next/link";
 import { MissionBrowser } from "@/components/MissionBrowser";
-import { getCurrentUser } from "@/lib/auth";
-import { missionSummaries } from "@/lib/catalog";
-import { starsFor } from "@/lib/crossword";
+import { ErrorState, PageSpinner, useRpc, useSession } from "@/components/session";
 
-export const dynamic = "force-dynamic";
-
-export default async function Home() {
-  const user = await getCurrentUser();
-  const { categories, items, best } = await missionSummaries(user?.id ?? null);
-  const stars = [...best.values()].reduce((s, v) => s + starsFor(v), 0);
-  const counts = new Map<string, number>();
-  for (const it of items) counts.set(it.category.slug, (counts.get(it.category.slug) ?? 0) + 1);
+export default function Home() {
+  const { user, loading: sessionLoading } = useSession();
+  // Re-load when the signed-in user changes so best scores are theirs.
+  const { data, error, reload } = useRpc("catalog", { user: user?.id ?? null }, !sessionLoading);
+  if (error) return <ErrorState error={error} onRetry={reload} />;
+  if (!data) return <PageSpinner />;
+  const { categories, items, completed, stars, bestTotal } = data;
 
   return (
     <div className="space-y-14">
@@ -58,9 +56,9 @@ export default async function Home() {
         {user ? (
           <div className="card grid grid-cols-3 gap-2 p-5 animate-rise" style={{ animationDelay: "120ms" }}>
             {[
-              { label: "Completed", value: `${best.size}/${items.length}` },
+              { label: "Completed", value: `${completed}/${items.length}` },
               { label: "Stars", value: `${stars}/${items.length * 3}` },
-              { label: "Best total", value: [...best.values()].reduce((s, v) => s + v, 0).toLocaleString() },
+              { label: "Best total", value: bestTotal.toLocaleString() },
             ].map((s) => (
               <div key={s.label} className="rounded-2xl p-3 text-center">
                 <div className="font-display text-2xl font-bold sm:text-3xl">{s.value}</div>
@@ -70,7 +68,7 @@ export default async function Home() {
             <div className="col-span-3 mt-1 h-2 overflow-hidden rounded-full bg-black/5 dark:bg-white/10">
               <div
                 className="h-full rounded-full bg-gradient-to-r from-brand-500 to-fuchsia-500"
-                style={{ width: `${items.length ? (best.size / items.length) * 100 : 0}%` }}
+                style={{ width: `${items.length ? (completed / items.length) * 100 : 0}%` }}
               />
             </div>
             <Link href="/profile" className="btn-ghost col-span-3 mt-1">
@@ -106,7 +104,7 @@ export default async function Home() {
           {categories.map((c, i) => (
             <Link
               key={c.id}
-              href={`/categories/${c.slug}`}
+              href={`/category?slug=${c.slug}`}
               className="card group relative w-56 shrink-0 snap-start overflow-hidden p-5 transition hover:-translate-y-1 sm:w-auto animate-rise"
               style={{ animationDelay: `${i * 40}ms` }}
             >
@@ -117,7 +115,7 @@ export default async function Home() {
               <div className="relative">
                 <div className="text-3xl transition group-hover:scale-110 group-hover:-rotate-6">{c.icon}</div>
                 <div className="mt-3 font-display font-bold">{c.name}</div>
-                <div className="mt-0.5 text-xs muted">{counts.get(c.slug) ?? 0} missions</div>
+                <div className="mt-0.5 text-xs muted">{c.missions} missions</div>
               </div>
             </Link>
           ))}

@@ -5,10 +5,10 @@ import type { PublicUser } from "@/lib/types";
 import { ConfirmButton } from "./Modal";
 import { useMutation } from "./useMutation";
 
-type Row = PublicUser & { attempts: number; best: number };
+type Row = PublicUser & { attempts: number };
 
-export function UserTable({ rows, meId }: { rows: Row[]; meId: string }) {
-  const { run, busy, error } = useMutation();
+export function UserTable({ rows, meId, onChanged }: { rows: Row[]; meId: string; onChanged: () => void }) {
+  const { run, busy, error } = useMutation(onChanged);
   return (
     <div className="card overflow-x-auto">
       {error && <p className="m-4 rounded-2xl bg-rose-500/10 px-4 py-2.5 text-sm text-rose-500">{error}</p>}
@@ -36,7 +36,7 @@ export function UserTable({ rows, meId }: { rows: Row[]; meId: string }) {
                   className="input w-28 py-1.5"
                   value={u.role}
                   disabled={busy || u.id === meId}
-                  onChange={(e) => run(`/api/admin/users/${u.id}`, "PATCH", { role: e.target.value })}
+                  onChange={(e) => run("admin.user.role", { id: u.id, role: e.target.value })}
                   aria-label={`Role of ${u.name}`}
                 >
                   <option value="user">Learner</option>
@@ -49,7 +49,7 @@ export function UserTable({ rows, meId }: { rows: Row[]; meId: string }) {
                     className="btn-ghost size-9 p-0 text-rose-500"
                     label="Delete user"
                     message={`Delete ${u.name} and all their attempts?`}
-                    onConfirm={() => run(`/api/admin/users/${u.id}`, "DELETE")}
+                    onConfirm={() => run("admin.user.delete", { id: u.id })}
                   >
                     <Trash className="size-4" />
                   </ConfirmButton>

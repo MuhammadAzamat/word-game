@@ -1,23 +1,27 @@
+"use client";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import { MissionCard } from "@/components/MissionCard";
-import { getCurrentUser } from "@/lib/auth";
-import { missionSummaries } from "@/lib/catalog";
-import { getCategoryBySlug } from "@/lib/db";
+import { ErrorState, PageSpinner, useRpc, useSession } from "@/components/session";
 
-export const dynamic = "force-dynamic";
-
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const c = await getCategoryBySlug((await params).slug);
-  return { title: c?.name ?? "Category" };
+export default function CategoryPage() {
+  return (
+    <Suspense fallback={<PageSpinner />}>
+      <Category />
+    </Suspense>
+  );
 }
 
-export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
-  const category = await getCategoryBySlug((await params).slug);
-  if (!category) notFound();
-  const user = await getCurrentUser();
-  const { items } = await missionSummaries(user?.id ?? null, (m) => m.categoryId === category.id);
+function Category() {
+  const slug = useSearchParams().get("slug") ?? "";
+  const { user, loading: sessionLoading } = useSession();
+  const { data, error, reload } = useRpc("catalog", { slug, user: user?.id ?? null }, !sessionLoading);
+  if (error) return <ErrorState error={error} onRetry={reload} />;
+  if (!data) return <PageSpinner />;
+  const category = data.category!;
+  const items = data.items;
   const done = items.filter((i) => i.best !== null).length;
 
   return (

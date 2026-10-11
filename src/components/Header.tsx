@@ -1,11 +1,12 @@
+"use client";
 import Link from "next/link";
-import { getCurrentUser } from "@/lib/auth";
 import { ThemeToggle } from "./ThemeToggle";
 import { UserMenu } from "./UserMenu";
 import { Logo } from "./Logo";
+import { useSession } from "./session";
 
-export async function Header() {
-  const user = await getCurrentUser();
+export function Header() {
+  const { user, loading } = useSession();
   return (
     <header className="sticky top-0 z-40 border-b hairline bg-[var(--bg)]/70 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-2 px-4">
@@ -21,7 +22,9 @@ export async function Header() {
           {user?.role === "admin" && <Link href="/admin" className="btn-ghost">Admin</Link>}
         </nav>
         <ThemeToggle />
-        {user ? (
+        {loading ? (
+          <span className="size-10" />
+        ) : user ? (
           <UserMenu user={user} />
         ) : (
           <div className="flex items-center gap-1">

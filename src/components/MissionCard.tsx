@@ -2,23 +2,15 @@ import { Clock, Play, Puzzle } from "lucide-react";
 import Link from "next/link";
 import { starsFor } from "@/lib/crossword";
 import { DIFFICULTY, FOCUS } from "@/lib/labels";
-import type { Category, Mission } from "@/lib/types";
+import type { MissionSummary } from "@/lib/services";
 import { Stars } from "./Stars";
-
-export interface MissionSummary {
-  mission: Pick<Mission, "id" | "title" | "description" | "focus" | "difficulty" | "level" | "timeLimit"> & {
-    wordCount: number;
-  };
-  category: Pick<Category, "name" | "icon" | "color" | "slug">;
-  best: number | null;
-}
 
 export function MissionCard({ mission, category, best, index = 0 }: MissionSummary & { index?: number }) {
   const focus = FOCUS[mission.focus];
   const diff = DIFFICULTY[mission.difficulty];
   return (
     <Link
-      href={`/play/${mission.id}`}
+      href={`/play?id=${mission.id}`}
       className="card group relative flex flex-col overflow-hidden p-5 transition hover:-translate-y-1 hover:shadow-xl animate-rise"
       style={{ animationDelay: `${Math.min(index, 12) * 40}ms` }}
     >

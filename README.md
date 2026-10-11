@@ -8,6 +8,21 @@ vocabulary, speaking or world knowledge.
 Built with **Next.js 15 (App Router)**, **React 19**, **Tailwind CSS 4** and TypeScript.
 Data is stored in **JSON files**, with no database server to run.
 
+**Live demo:** https://muhammadazamat.github.io/word-game/ (the static build, see below)
+
+## Two ways to run it
+
+| | Server build (`npm run build`) | Static build (`npm run build:static`) |
+|---|---|---|
+| Hosting | Any Node host with a persistent disk | GitHub Pages or any static host |
+| Data | JSON files on the server, shared by everyone | `localStorage`, separate in each browser |
+| Accounts & admin | Real, server-side and protected | Demo only: they live in the visitor's browser |
+| Answers | Never sent to the browser | Included in the page bundle |
+
+Both builds share the same code: every operation lives in `src/lib/services.ts`. The
+server runs these operations behind `/api/rpc`. The static build runs the same functions
+in the browser against a `localStorage` store seeded from `data/seed/`.
+
 ## Features
 
 **For players**
@@ -70,7 +85,7 @@ data/
   db/     # live database, created from seed/ on first run (git-ignored)
 ```
 
-Each collection (`users`, `categories`, `missions`, `attempts`) is one JSON file. Writes are
+In the server build, each collection (`users`, `categories`, `missions`, `attempts`) is one JSON file. Writes are
 serialised per collection and written atomically (temp file, then rename). Set `DATA_DIR`
 to keep the database somewhere else, for example on a persistent volume. To reset all
 content, delete `data/db/`.
@@ -79,22 +94,38 @@ Use a host with a persistent filesystem (a VPS, Docker with a volume, Railway, F
 Serverless hosts such as Vercel have read-only, ephemeral disks, so they need a real
 database instead of JSON files.
 
+## GitHub Pages
+
+`.github/workflows/pages.yml` runs on every push to `main`. It runs the tests, builds the
+static site with `BASE_PATH=/<repo-name>` and pushes it to the `gh-pages` branch. In
+**Settings → Pages**, set the source to **Deploy from a branch** → `gh-pages` / `(root)`.
+
+To build it locally:
+
+```bash
+STATIC_EXPORT=1 BASE_PATH=/word-game npx next build   # output in ./out
+```
+
+In the static build, a visitor's progress, any accounts they create and any admin
+changes are stored in their own browser. Nobody else sees them.
+
 ## Project layout
 
 ```
 src/
   app/                  pages and API routes
-    api/auth/*          register, login, logout
-    api/attempts/*      start, hint, check, submit
-    api/admin/*         categories, missions (+ preview), attempts, users
+    api/rpc/route.api.ts  server build only: runs operations for the browser
     admin/*             admin panel pages
-    play/[id]           the game
+    play/               the game (?id=…)
+    category/           missions of one category (?slug=…)
   components/game/      CrosswordGame, Results, SpeakPractice, Confetti
   components/admin/     editors and tables
   lib/crossword.ts      grid generator, grading, scoring (pure, unit-tested)
-  lib/db.ts             JSON file storage
-  lib/auth.ts           sessions and guards
-  middleware.ts         redirects signed-out users away from protected pages
+  lib/services.ts       every operation (auth, catalog, game, admin), shared by both builds
+  lib/db.ts             JSON file store (server build)
+  lib/local-backend.ts  localStorage store + session (static build)
+  lib/client.ts         rpc(): calls the server or the local backend
+  lib/auth.ts           cookie sessions (server build)
 tests/                  node:test unit tests
 ```
 
@@ -103,7 +134,8 @@ tests/                  node:test unit tests
 | Command         | What it does                                   |
 |-----------------|------------------------------------------------|
 | `npm run dev`   | Development server                             |
-| `npm run build` | Production build                               |
+| `npm run build` | Production build (Node server)                  |
+| `npm run build:static` | Static export for GitHub Pages (`./out`) |
 | `npm start`     | Start the production build                     |
 | `npm run lint`  | Type-check (`tsc --noEmit`)                    |
 | `npm test`      | Unit tests for the crossword engine (Node 22+) |
