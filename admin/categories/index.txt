@@ -1,0 +1,28 @@
+1:"$Sreact.fragment"
+2:I[1761,["619","static/chunks/619-ba102abea3e3d0e4.js","14","static/chunks/14-93b2983e945b7d5a.js","177","static/chunks/app/layout-6c6aaec6bccb3db0.js"],"Providers"]
+3:I[6476,["619","static/chunks/619-ba102abea3e3d0e4.js","14","static/chunks/14-93b2983e945b7d5a.js","177","static/chunks/app/layout-6c6aaec6bccb3db0.js"],"Header"]
+4:I[9766,[],""]
+5:I[8924,[],""]
+6:I[2619,["619","static/chunks/619-ba102abea3e3d0e4.js","345","static/chunks/app/not-found-9dc0c51d9e49f71a.js"],""]
+7:I[7989,[],"ClientSegmentRoot"]
+8:I[3484,["619","static/chunks/619-ba102abea3e3d0e4.js","581","static/chunks/app/admin/layout-2585da489525017b.js"],"default"]
+a:I[1959,[],"ClientPageRoot"]
+b:I[1890,["258","static/chunks/258-d287abba37a51850.js","631","static/chunks/app/admin/categories/page-e276b6ea6fab5389.js"],"default"]
+e:I[4431,[],"OutletBoundary"]
+10:I[5278,[],"AsyncMetadataOutlet"]
+12:I[4431,[],"ViewportBoundary"]
+14:I[4431,[],"MetadataBoundary"]
+15:"$Sreact.suspense"
+17:I[7150,[],""]
+:HL["/word-game/_next/static/media/36966cca54120369-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/word-game/_next/static/media/636a5ac981f94f8b-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/word-game/_next/static/css/3afccf5c9688cdbc.css","style"]
+0:{"P":null,"b":"bGC4cnHZcgjvxBBLwK_iA","p":"/word-game","c":["","admin","categories",""],"i":false,"f":[[["",{"children":["admin",{"children":["categories",{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/word-game/_next/static/css/3afccf5c9688cdbc.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"__variable_bc5bcb __variable_2a52f1","children":["$","body",null,{"className":"bg-blobs font-sans","children":["$","$L2",null,{"children":[["$","$L3",null,{}],["$","main",null,{"className":"mx-auto max-w-6xl px-4 pb-24 pt-6 sm:pt-10","children":["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"mx-auto max-w-md py-20 text-center animate-rise","children":[["$","div",null,{"className":"font-display text-7xl font-bold","children":["4",["$","span",null,{"className":"text-brand-500","children":"0"}],"4"]}],["$","p",null,{"className":"mt-3 muted","children":"This square is empty. The page you're looking for doesn't exist."}],["$","$L6",null,{"href":"/","className":"btn-primary mt-6","children":"Back to missions"}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t hairline py-8 text-center text-xs muted","children":"WordQuest · learn English one crossword at a time"}]]}]}]}]]}],{"children":["admin",["$","$1","c",{"children":[null,["$","$L7",null,{"Component":"$8","slots":{"children":["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]},"params":{},"promise":"$@9"}]]}],{"children":["categories",["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$La",null,{"Component":"$b","searchParams":{},"params":"$0:f:0:1:2:children:1:props:children:1:props:params","promises":["$@c","$@d"]}],null,["$","$Le",null,{"children":["$Lf",["$","$L10",null,{"promise":"$@11"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$L12",null,{"children":"$L13"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$L14",null,{"children":["$","div",null,{"hidden":true,"children":["$","$15",null,{"fallback":null,"children":"$L16"}]}]}]]}],false]],"m":"$undefined","G":["$17",[]],"s":false,"S":true}
+9:"$0:f:0:1:2:children:1:props:children:1:props:params"
+c:{}
+d:"$0:f:0:1:2:children:1:props:children:1:props:params"
+13:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","media":"(prefers-color-scheme: light)","content":"#f6f7fb"}],["$","meta","3",{"name":"theme-color","media":"(prefers-color-scheme: dark)","content":"#0b0d17"}]]
+f:null
+18:I[622,[],"IconMark"]
+11:{"metadata":[["$","title","0",{"children":"WordQuest — English crossword missions"}],["$","meta","1",{"name":"description","content":"Learn English grammar, speaking and world knowledge by solving crossword missions."}],["$","link","2",{"rel":"icon","href":"/word-game/icon.svg?503ac964e31676c1","type":"image/svg+xml","sizes":"any"}],["$","$L18","3",{}]],"error":null,"digest":"$undefined"}
+16:"$11:metadata"
