@@ -1,0 +1,65 @@
+[
+  {
+    "id": "cat-tourism",
+    "slug": "tourism",
+    "name": "Tourism",
+    "description": "Airports, hotels and the world's must-see places. Travel-ready English.",
+    "icon": "✈️",
+    "color": "#0ea5e9",
+    "order": 0
+  },
+  {
+    "id": "cat-history",
+    "slug": "history",
+    "name": "History",
+    "description": "Empires, explorers and the events that shaped the modern world.",
+    "icon": "🏛️",
+    "color": "#f59e0b",
+    "order": 1
+  },
+  {
+    "id": "cat-inventions",
+    "slug": "inventions",
+    "name": "Inventions",
+    "description": "The people and ideas behind the things we use every day.",
+    "icon": "💡",
+    "color": "#f97316",
+    "order": 2
+  },
+  {
+    "id": "cat-technologies",
+    "slug": "technologies",
+    "name": "Technologies",
+    "description": "From keyboards to AI — the language of the digital age.",
+    "icon": "🤖",
+    "color": "#8b5cf6",
+    "order": 3
+  },
+  {
+    "id": "cat-grammar",
+    "slug": "grammar-lab",
+    "name": "Grammar Lab",
+    "description": "Irregular verbs, phrasal verbs and tricky plurals, solved letter by letter.",
+    "icon": "📝",
+    "color": "#10b981",
+    "order": 4
+  },
+  {
+    "id": "cat-speaking",
+    "slug": "speak-up",
+    "name": "Speak Up",
+    "description": "Phrases and idioms for real conversations. Listen, solve, then say it out loud.",
+    "icon": "🎙️",
+    "color": "#ec4899",
+    "order": 5
+  },
+  {
+    "id": "cat-world",
+    "slug": "world",
+    "name": "World Knowledge",
+    "description": "Capitals, oceans and natural wonders across every continent.",
+    "icon": "🌍",
+    "color": "#14b8a6",
+    "order": 6
+  }
+]

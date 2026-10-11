@@ -1,0 +1,1262 @@
+[
+  {
+    "id": "m-tourism-airport",
+    "categoryId": "cat-tourism",
+    "title": "At the Airport",
+    "description": "Everything you need from check-in to the boarding gate.",
+    "focus": "vocabulary",
+    "difficulty": "easy",
+    "level": "A2",
+    "timeLimit": 0,
+    "published": true,
+    "words": [
+      {
+        "answer": "PASSPORT",
+        "clue": "Official document you show at border control",
+        "note": "Your passport proves your identity and nationality.",
+        "example": "Please have your passport ready."
+      },
+      {
+        "answer": "BOARDING",
+        "clue": "___ pass: the ticket that lets you onto the plane",
+        "note": "A boarding pass shows your seat and gate number.",
+        "example": "Boarding starts thirty minutes before departure."
+      },
+      {
+        "answer": "LUGGAGE",
+        "clue": "Bags and suitcases you take on a trip (uncountable noun)",
+        "note": "'Luggage' is uncountable: say 'a piece of luggage', not 'a luggage'.",
+        "example": "How much luggage are you checking in?"
+      },
+      {
+        "answer": "CUSTOMS",
+        "clue": "Where officers check what you bring into a country",
+        "note": "You often hear: 'Do you have anything to declare?'",
+        "example": "We went through customs quickly."
+      },
+      {
+        "answer": "GATE",
+        "clue": "The place where you wait before getting on the plane",
+        "note": "Gate numbers can change — always check the screens.",
+        "example": "Our flight leaves from gate twelve."
+      },
+      {
+        "answer": "DELAY",
+        "clue": "When a flight leaves later than planned",
+        "note": "'Delay' is both a noun and a verb: 'The flight was delayed.'",
+        "example": "There is a two-hour delay because of fog."
+      },
+      {
+        "answer": "TERMINAL",
+        "clue": "A large airport building where passengers arrive and depart",
+        "note": "Big airports like Heathrow have several terminals.",
+        "example": "Domestic flights leave from Terminal 2."
+      },
+      {
+        "answer": "VISA",
+        "clue": "Permission to enter a country, often stamped in your passport",
+        "note": "Many countries now offer electronic visas (e-visas).",
+        "example": "I applied for a tourist visa online."
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "m-tourism-hotel",
+    "categoryId": "cat-tourism",
+    "title": "Hotel Check-in",
+    "description": "Book, check in and ask for what you need — politely.",
+    "focus": "speaking",
+    "difficulty": "easy",
+    "level": "A2",
+    "timeLimit": 0,
+    "published": true,
+    "words": [
+      {
+        "answer": "RECEPTION",
+        "clue": "The front desk where guests check in",
+        "note": "Also called 'the front desk' in American English.",
+        "example": "Please leave your key at reception."
+      },
+      {
+        "answer": "BOOKING",
+        "clue": "A reservation for a room",
+        "note": "'Book' as a verb means to reserve: 'I booked a double room.'",
+        "example": "I have a booking under the name Smith."
+      },
+      {
+        "answer": "CHECKOUT",
+        "clue": "The time you must leave your room, often 11 a.m.",
+        "note": "Ask: 'Could I have a late checkout, please?'",
+        "example": "Checkout is at eleven o'clock."
+      },
+      {
+        "answer": "BREAKFAST",
+        "clue": "First meal of the day, often included in the price",
+        "note": "'Is breakfast included?' is one of the most useful hotel questions.",
+        "example": "Breakfast is served from seven to ten."
+      },
+      {
+        "answer": "VACANCY",
+        "clue": "A free room; signs say 'No ___' when the hotel is full",
+        "note": "Plural: vacancies. It also means an open job position.",
+        "example": "Do you have any vacancies for tonight?"
+      },
+      {
+        "answer": "TOWEL",
+        "clue": "You dry yourself with it after a shower",
+        "note": "Polite request: 'Could I have some extra towels, please?'",
+        "example": "Could you bring me a clean towel?"
+      },
+      {
+        "answer": "DEPOSIT",
+        "clue": "Money you pay in advance, returned if nothing is damaged",
+        "note": "Hotels often 'hold a deposit' on your credit card.",
+        "example": "There is a fifty-dollar deposit."
+      },
+      {
+        "answer": "CONCIERGE",
+        "clue": "Hotel staff member who books tours and gives local advice",
+        "note": "The word comes from French and is pronounced kon-see-AIRZH.",
+        "example": "The concierge recommended a great restaurant."
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "m-tourism-landmarks",
+    "categoryId": "cat-tourism",
+    "title": "Famous Landmarks",
+    "description": "Match the world's best-known sights to their cities.",
+    "focus": "knowledge",
+    "difficulty": "medium",
+    "level": "B1",
+    "timeLimit": 300,
+    "published": true,
+    "words": [
+      {
+        "answer": "PARIS",
+        "clue": "City of the Eiffel Tower",
+        "note": "The tower was built for the 1889 World's Fair and was meant to be temporary.",
+        "example": "We watched the tower sparkle at night in Paris."
+      },
+      {
+        "answer": "AGRA",
+        "clue": "Indian city of the Taj Mahal",
+        "note": "The Taj Mahal was built by Shah Jahan in memory of his wife Mumtaz Mahal.",
+        "example": "Agra is about three hours from Delhi by train."
+      },
+      {
+        "answer": "PETRA",
+        "clue": "Jordanian city carved into rose-red rock",
+        "note": "Petra was the capital of the Nabataeans over 2,000 years ago.",
+        "example": "The Treasury is the most famous building in Petra."
+      },
+      {
+        "answer": "ROME",
+        "clue": "Home of the Colosseum",
+        "note": "The Colosseum could hold around 50,000 spectators.",
+        "example": "All roads lead to Rome."
+      },
+      {
+        "answer": "GIZA",
+        "clue": "Egyptian plateau with the Great Pyramid",
+        "note": "The Great Pyramid was the tallest man-made structure for almost 4,000 years.",
+        "example": "The pyramids of Giza are near Cairo."
+      },
+      {
+        "answer": "SYDNEY",
+        "clue": "Australian city with a famous sail-shaped opera house",
+        "note": "The Sydney Opera House opened in 1973.",
+        "example": "We took a ferry across Sydney Harbour."
+      },
+      {
+        "answer": "SAMARKAND",
+        "clue": "Uzbek city of the Registan square",
+        "note": "Samarkand was a key stop on the Silk Road for centuries.",
+        "example": "The tiles in Samarkand are an incredible blue."
+      },
+      {
+        "answer": "BEIJING",
+        "clue": "Capital city of the Forbidden City",
+        "note": "The Forbidden City has around 980 buildings.",
+        "example": "Beijing hosted the Olympics in 2008 and 2022."
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "m-history-ancient",
+    "categoryId": "cat-history",
+    "title": "Ancient Civilisations",
+    "description": "Pharaohs, emperors and the trade routes between them.",
+    "focus": "knowledge",
+    "difficulty": "medium",
+    "level": "B1",
+    "timeLimit": 0,
+    "published": true,
+    "words": [
+      {
+        "answer": "PHARAOH",
+        "clue": "Title of the kings of ancient Egypt",
+        "note": "Note the spelling: P-H-A-R-A-O-H. The 'aoh' trips many learners.",
+        "example": "Tutankhamun became pharaoh as a boy."
+      },
+      {
+        "answer": "PYRAMID",
+        "clue": "Huge stone tomb with a square base and pointed top",
+        "note": "Adjective: pyramidal. A 'pyramid scheme' is a type of fraud.",
+        "example": "Thousands of workers built each pyramid."
+      },
+      {
+        "answer": "SPARTA",
+        "clue": "Greek city-state famous for its warriors",
+        "note": "Today 'spartan' means simple and without comfort.",
+        "example": "Boys in Sparta trained to be soldiers."
+      },
+      {
+        "answer": "CAESAR",
+        "clue": "Roman leader murdered on the Ides of March, 44 BC",
+        "note": "His name became a title: 'Kaiser' and 'Tsar' both come from it.",
+        "example": "Caesar crossed the Rubicon in 49 BC."
+      },
+      {
+        "answer": "PAPYRUS",
+        "clue": "Egyptian plant used as an early form of paper",
+        "note": "The English word 'paper' comes from papyrus.",
+        "example": "The scroll was written on papyrus."
+      },
+      {
+        "answer": "EMPIRE",
+        "clue": "A group of countries ruled by one emperor or state",
+        "note": "Related words: emperor, empress, imperial.",
+        "example": "The Roman Empire lasted for centuries."
+      },
+      {
+        "answer": "SILK",
+        "clue": "The ___ Road linked China with the Mediterranean",
+        "note": "The route carried paper, spices, ideas and religions, not just silk.",
+        "example": "Merchants travelled the Silk Road by camel."
+      },
+      {
+        "answer": "MAYA",
+        "clue": "Central American civilisation famous for its calendar",
+        "note": "The Maya built cities like Tikal and Chichén Itzá.",
+        "example": "The Maya studied the stars carefully."
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "m-history-past",
+    "categoryId": "cat-history",
+    "title": "Past Simple Time Travel",
+    "description": "Put the verb in brackets into the past simple — history style.",
+    "focus": "grammar",
+    "difficulty": "easy",
+    "level": "A2",
+    "timeLimit": 0,
+    "published": true,
+    "words": [
+      {
+        "answer": "SAILED",
+        "clue": "Columbus ___ (sail) across the Atlantic in 1492.",
+        "note": "Regular verb: add -ed.",
+        "example": "Columbus sailed with three ships."
+      },
+      {
+        "answer": "BUILT",
+        "clue": "Gutenberg ___ (build) a printing press around 1440.",
+        "note": "Irregular: build – built – built.",
+        "example": "They built the bridge in two years."
+      },
+      {
+        "answer": "LOST",
+        "clue": "Napoleon ___ (lose) the Battle of Waterloo in 1815.",
+        "note": "Irregular: lose – lost – lost.",
+        "example": "Napoleon lost his last battle in Belgium."
+      },
+      {
+        "answer": "SPOKE",
+        "clue": "The ancient Romans ___ (speak) Latin.",
+        "note": "Irregular: speak – spoke – spoken.",
+        "example": "My grandfather spoke four languages."
+      },
+      {
+        "answer": "REACHED",
+        "clue": "Amundsen ___ (reach) the South Pole first, in 1911.",
+        "note": "Regular verb: reach – reached.",
+        "example": "We reached the top at sunrise."
+      },
+      {
+        "answer": "SANK",
+        "clue": "The Titanic ___ (sink) in 1912.",
+        "note": "Irregular: sink – sank – sunk.",
+        "example": "The ship sank in less than three hours."
+      },
+      {
+        "answer": "WALKED",
+        "clue": "Neil Armstrong ___ (walk) on the Moon in 1969.",
+        "note": "Regular verb. Pronounced with a /t/ sound: walk-t.",
+        "example": "He walked on the Moon for about two hours."
+      },
+      {
+        "answer": "MADE",
+        "clue": "Amir Timur ___ (make) Samarkand his capital.",
+        "note": "Irregular: make – made – made.",
+        "example": "Timur made the city a centre of art."
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "m-history-modern",
+    "categoryId": "cat-history",
+    "title": "The 20th Century",
+    "description": "Wars, walls, space races and the leaders who changed history.",
+    "focus": "knowledge",
+    "difficulty": "hard",
+    "level": "B2",
+    "timeLimit": 420,
+    "published": true,
+    "words": [
+      {
+        "answer": "TITANIC",
+        "clue": "'Unsinkable' ship that sank on its first voyage",
+        "note": "About 1,500 people died when it hit an iceberg in April 1912.",
+        "example": "The Titanic left Southampton for New York."
+      },
+      {
+        "answer": "APOLLO",
+        "clue": "NASA programme that put humans on the Moon",
+        "note": "Apollo 11 landed on 20 July 1969.",
+        "example": "Apollo 13 had to return without landing."
+      },
+      {
+        "answer": "BERLIN",
+        "clue": "City divided by a wall from 1961 to 1989",
+        "note": "The wall fell on 9 November 1989.",
+        "example": "Berlin is now the capital of a united Germany."
+      },
+      {
+        "answer": "GANDHI",
+        "clue": "Leader of India's non-violent independence movement",
+        "note": "He was called 'Mahatma', meaning 'great soul'.",
+        "example": "Gandhi led the Salt March in 1930."
+      },
+      {
+        "answer": "SPUTNIK",
+        "clue": "First artificial satellite, launched by the USSR in 1957",
+        "note": "Its launch started the Space Race.",
+        "example": "Sputnik sent a simple beeping signal."
+      },
+      {
+        "answer": "MANDELA",
+        "clue": "South African president who spent 27 years in prison",
+        "note": "He received the Nobel Peace Prize in 1993.",
+        "example": "Mandela became president in 1994."
+      },
+      {
+        "answer": "CHURCHILL",
+        "clue": "British prime minister during most of World War II",
+        "note": "He also won the Nobel Prize in Literature.",
+        "example": "Churchill gave famous speeches on the radio."
+      },
+      {
+        "answer": "EURO",
+        "clue": "Currency introduced in 1999",
+        "note": "Coins and notes arrived in 2002.",
+        "example": "You can pay in euros in Spain and Italy."
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "m-inv-classic",
+    "categoryId": "cat-inventions",
+    "title": "Great Inventions",
+    "description": "Objects and discoveries that changed how we live.",
+    "focus": "knowledge",
+    "difficulty": "easy",
+    "level": "B1",
+    "timeLimit": 0,
+    "published": true,
+    "words": [
+      {
+        "answer": "TELEPHONE",
+        "clue": "Device patented by Alexander Graham Bell in 1876",
+        "note": "From Greek: tele (far) + phone (sound).",
+        "example": "The first telephone call was 'Mr. Watson, come here'."
+      },
+      {
+        "answer": "WHEEL",
+        "clue": "Round invention from about 3500 BC, first used for pottery",
+        "note": "Early wheels were solid wood; spokes came later.",
+        "example": "The wheel made transport much easier."
+      },
+      {
+        "answer": "COMPASS",
+        "clue": "Navigation tool with a magnetic needle, invented in China",
+        "note": "The needle points to magnetic north, not true north.",
+        "example": "Sailors used a compass to find their way."
+      },
+      {
+        "answer": "PENICILLIN",
+        "clue": "First antibiotic, discovered by Alexander Fleming",
+        "note": "Fleming found it by accident in 1928 on a mouldy dish.",
+        "example": "Penicillin has saved millions of lives."
+      },
+      {
+        "answer": "TELESCOPE",
+        "clue": "Instrument Galileo used to see Jupiter's moons",
+        "note": "From Greek: tele (far) + skopein (to look).",
+        "example": "Through the telescope we saw Saturn's rings."
+      },
+      {
+        "answer": "VACCINE",
+        "clue": "Medicine that trains the body to fight a disease",
+        "note": "Edward Jenner made the first one, against smallpox, in 1796.",
+        "example": "The vaccine is given in two doses."
+      },
+      {
+        "answer": "ENGINE",
+        "clue": "Machine that turns fuel into movement",
+        "note": "James Watt's steam engine powered the Industrial Revolution.",
+        "example": "The car engine wouldn't start."
+      },
+      {
+        "answer": "PRESS",
+        "clue": "Printing ___: Gutenberg's machine for books",
+        "note": "'The press' also means newspapers and journalists.",
+        "example": "The printing press spread knowledge across Europe."
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "m-inv-passive",
+    "categoryId": "cat-inventions",
+    "title": "Passive Voice Workshop",
+    "description": "Write the past participle: who made what, and when.",
+    "focus": "grammar",
+    "difficulty": "medium",
+    "level": "B1",
+    "timeLimit": 0,
+    "published": true,
+    "words": [
+      {
+        "answer": "INVENTED",
+        "clue": "The telephone was ___ (invent) by Bell.",
+        "note": "Passive = be + past participle. Regular: invent – invented.",
+        "example": "The light bulb was invented in the 19th century."
+      },
+      {
+        "answer": "DISCOVERED",
+        "clue": "Penicillin was ___ (discover) by Fleming in 1928.",
+        "note": "We 'discover' what already exists and 'invent' something new.",
+        "example": "America was discovered by Europeans in 1492."
+      },
+      {
+        "answer": "MADE",
+        "clue": "Paper was first ___ (make) in China.",
+        "note": "Irregular: make – made – made.",
+        "example": "This watch was made in Switzerland."
+      },
+      {
+        "answer": "BUILT",
+        "clue": "The first petrol car was ___ (build) by Karl Benz.",
+        "note": "Irregular: build – built – built.",
+        "example": "The bridge was built in 1932."
+      },
+      {
+        "answer": "WRITTEN",
+        "clue": "'Harry Potter' was ___ (write) by J.K. Rowling.",
+        "note": "Irregular: write – wrote – written. Note the double T.",
+        "example": "The letter was written in pencil."
+      },
+      {
+        "answer": "DESIGNED",
+        "clue": "The Eiffel Tower was ___ (design) by Gustave Eiffel's company.",
+        "note": "The G is silent: de-ZINED.",
+        "example": "The app was designed for children."
+      },
+      {
+        "answer": "USED",
+        "clue": "Compasses were ___ (use) by sailors to navigate.",
+        "note": "Don't confuse with 'used to' (past habit).",
+        "example": "Steam engines were used in factories."
+      },
+      {
+        "answer": "DRIVEN",
+        "clue": "Many cars will soon be ___ (drive) by computers.",
+        "note": "Irregular: drive – drove – driven.",
+        "example": "The bus was driven by a robot."
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "m-inv-inventors",
+    "categoryId": "cat-inventions",
+    "title": "Who Invented It?",
+    "description": "Name the inventors and scientists behind famous breakthroughs.",
+    "focus": "knowledge",
+    "difficulty": "hard",
+    "level": "B2",
+    "timeLimit": 360,
+    "published": true,
+    "words": [
+      {
+        "answer": "EDISON",
+        "clue": "American who developed a practical light bulb",
+        "note": "He held over 1,000 patents.",
+        "example": "Edison opened a research lab in Menlo Park."
+      },
+      {
+        "answer": "TESLA",
+        "clue": "Serbian-American pioneer of alternating current (AC)",
+        "note": "The unit of magnetic flux density is named after him.",
+        "example": "Tesla dreamed of wireless electricity."
+      },
+      {
+        "answer": "CURIE",
+        "clue": "Marie ___: first person to win two Nobel Prizes",
+        "note": "She won in physics (1903) and chemistry (1911).",
+        "example": "Curie discovered polonium and radium."
+      },
+      {
+        "answer": "WRIGHT",
+        "clue": "Surname of the brothers who made the first powered flight",
+        "note": "Orville and Wilbur flew at Kitty Hawk in 1903.",
+        "example": "The Wright brothers' first flight lasted 12 seconds."
+      },
+      {
+        "answer": "NOBEL",
+        "clue": "Swedish inventor of dynamite who created famous prizes",
+        "note": "He left his fortune to fund the prizes.",
+        "example": "The Nobel Prizes are awarded each December."
+      },
+      {
+        "answer": "FLEMING",
+        "clue": "Scottish scientist who discovered penicillin",
+        "note": "He said: 'One sometimes finds what one is not looking for.'",
+        "example": "Fleming noticed mould killing bacteria."
+      },
+      {
+        "answer": "GUTENBERG",
+        "clue": "German who introduced movable-type printing in Europe",
+        "note": "His Bible (around 1455) is one of the most valuable books.",
+        "example": "Gutenberg changed how books were made."
+      },
+      {
+        "answer": "BELL",
+        "clue": "Alexander Graham ___: telephone pioneer",
+        "note": "He was also a teacher of deaf students.",
+        "example": "Bell was born in Edinburgh."
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "m-tech-basics",
+    "categoryId": "cat-technologies",
+    "title": "Digital World",
+    "description": "The everyday words of computers and the internet.",
+    "focus": "vocabulary",
+    "difficulty": "easy",
+    "level": "A2",
+    "timeLimit": 0,
+    "published": true,
+    "words": [
+      {
+        "answer": "KEYBOARD",
+        "clue": "You type on it",
+        "note": "QWERTY is named after the first six letters on the top row.",
+        "example": "My keyboard is missing the letter Q."
+      },
+      {
+        "answer": "MOUSE",
+        "clue": "You click and scroll with it",
+        "note": "Plural: mice (or 'mouses' for computer mice, informally).",
+        "example": "Move the mouse to the top corner."
+      },
+      {
+        "answer": "SCREEN",
+        "clue": "The part of a phone or laptop that shows pictures",
+        "note": "Phrasal verb: 'screen out' means to filter.",
+        "example": "My screen is cracked."
+      },
+      {
+        "answer": "BROWSER",
+        "clue": "Program you use to visit websites",
+        "note": "Chrome, Safari and Firefox are browsers.",
+        "example": "Open the link in your browser."
+      },
+      {
+        "answer": "PASSWORD",
+        "clue": "Secret word that protects your account",
+        "note": "Strong passwords are long and unique.",
+        "example": "Never share your password."
+      },
+      {
+        "answer": "DOWNLOAD",
+        "clue": "To copy a file from the internet to your device",
+        "note": "Opposite: upload.",
+        "example": "The update takes ten minutes to download."
+      },
+      {
+        "answer": "BATTERY",
+        "clue": "Gives your phone power; it needs charging",
+        "note": "'My battery is dead' = it is empty.",
+        "example": "My battery is at five percent!"
+      },
+      {
+        "answer": "WIFI",
+        "clue": "Wireless internet connection",
+        "note": "Ask: 'What's the Wi-Fi password?'",
+        "example": "Is there free Wi-Fi here?"
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "m-tech-ai",
+    "categoryId": "cat-technologies",
+    "title": "AI & Future Tech",
+    "description": "Robots, algorithms and the cloud — the vocabulary of tomorrow.",
+    "focus": "knowledge",
+    "difficulty": "medium",
+    "level": "B2",
+    "timeLimit": 0,
+    "published": true,
+    "words": [
+      {
+        "answer": "ROBOT",
+        "clue": "Machine that can do tasks automatically",
+        "note": "From the Czech word 'robota', meaning forced work.",
+        "example": "A robot vacuums our floor."
+      },
+      {
+        "answer": "ALGORITHM",
+        "clue": "Step-by-step set of rules a computer follows",
+        "note": "Named after the Persian mathematician al-Khwarizmi, born in Khorezm (today's Uzbekistan).",
+        "example": "The algorithm recommends videos you might like."
+      },
+      {
+        "answer": "DATA",
+        "clue": "Facts and numbers collected for analysis",
+        "note": "Technically plural (singular 'datum'), but often used as uncountable.",
+        "example": "The data shows a clear trend."
+      },
+      {
+        "answer": "CLOUD",
+        "clue": "Remote servers where you store files online",
+        "note": "'In the cloud' means on the internet, not on your device.",
+        "example": "My photos are backed up to the cloud."
+      },
+      {
+        "answer": "DRONE",
+        "clue": "Flying device controlled remotely",
+        "note": "It also means a low, continuous humming sound.",
+        "example": "The drone filmed the wedding from above."
+      },
+      {
+        "answer": "CHATBOT",
+        "clue": "Program you can have a text conversation with",
+        "note": "A blend of 'chat' and 'robot'.",
+        "example": "The chatbot answered my question instantly."
+      },
+      {
+        "answer": "PIXEL",
+        "clue": "Smallest dot of colour on a screen",
+        "note": "A blend of 'picture' and 'element'.",
+        "example": "This camera has 48 million pixels."
+      },
+      {
+        "answer": "SATELLITE",
+        "clue": "Object that orbits Earth and sends signals",
+        "note": "GPS uses about 30 satellites.",
+        "example": "The satellite sends TV signals to Asia."
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "m-tech-compare",
+    "categoryId": "cat-technologies",
+    "title": "Comparatives in Tech",
+    "description": "Faster, smaller, better — practise comparatives and superlatives.",
+    "focus": "grammar",
+    "difficulty": "medium",
+    "level": "B1",
+    "timeLimit": 0,
+    "published": true,
+    "words": [
+      {
+        "answer": "SMALLER",
+        "clue": "Phones today are ___ (small) than computers in 1990.",
+        "note": "Short adjective: add -er.",
+        "example": "My new laptop is smaller and lighter."
+      },
+      {
+        "answer": "FASTER",
+        "clue": "Fibre internet is ___ (fast) than dial-up.",
+        "note": "Short adjective: fast – faster – the fastest.",
+        "example": "This train is faster than the plane."
+      },
+      {
+        "answer": "BIGGEST",
+        "clue": "This is the ___ (big) screen in the shop.",
+        "note": "One vowel + one consonant: double it — big, biggest.",
+        "example": "That's the biggest TV I've ever seen."
+      },
+      {
+        "answer": "CHEAPER",
+        "clue": "Tablets got ___ (cheap) every year.",
+        "note": "Short adjective: cheap – cheaper – the cheapest.",
+        "example": "Streaming is cheaper than cable."
+      },
+      {
+        "answer": "BETTER",
+        "clue": "The new camera is much ___ (good) than the old one.",
+        "note": "Irregular: good – better – the best.",
+        "example": "This version is better than the last."
+      },
+      {
+        "answer": "WORST",
+        "clue": "That was the ___ (bad) update ever!",
+        "note": "Irregular: bad – worse – the worst.",
+        "example": "It was the worst day of my life."
+      },
+      {
+        "answer": "EASIER",
+        "clue": "Voice typing is ___ (easy) than typing on a tiny screen.",
+        "note": "Consonant + y → -ier.",
+        "example": "Learning online is easier than I thought."
+      },
+      {
+        "answer": "SMARTEST",
+        "clue": "This is the ___ (smart) watch on the market.",
+        "note": "Short adjective: smart – smarter – the smartest.",
+        "example": "She is the smartest student in class."
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "m-gram-irregular",
+    "categoryId": "cat-grammar",
+    "title": "Irregular Verbs I",
+    "description": "Past simple forms every learner must know.",
+    "focus": "grammar",
+    "difficulty": "easy",
+    "level": "A2",
+    "timeLimit": 0,
+    "published": true,
+    "words": [
+      {
+        "answer": "WENT",
+        "clue": "Past of GO",
+        "note": "go – went – gone",
+        "example": "We went to the beach yesterday."
+      },
+      {
+        "answer": "BOUGHT",
+        "clue": "Past of BUY",
+        "note": "buy – bought – bought. Rhymes with 'caught'.",
+        "example": "I bought a new jacket."
+      },
+      {
+        "answer": "THOUGHT",
+        "clue": "Past of THINK",
+        "note": "think – thought – thought",
+        "example": "I thought you were at home."
+      },
+      {
+        "answer": "TAUGHT",
+        "clue": "Past of TEACH",
+        "note": "teach – taught – taught",
+        "example": "My mother taught me to swim."
+      },
+      {
+        "answer": "WROTE",
+        "clue": "Past of WRITE",
+        "note": "write – wrote – written",
+        "example": "She wrote a letter to her friend."
+      },
+      {
+        "answer": "BEGAN",
+        "clue": "Past of BEGIN",
+        "note": "begin – began – begun",
+        "example": "The film began at eight."
+      },
+      {
+        "answer": "FLEW",
+        "clue": "Past of FLY",
+        "note": "fly – flew – flown",
+        "example": "We flew to Istanbul."
+      },
+      {
+        "answer": "CAUGHT",
+        "clue": "Past of CATCH",
+        "note": "catch – caught – caught",
+        "example": "He caught the last bus."
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "m-gram-phrasal",
+    "categoryId": "cat-grammar",
+    "title": "Phrasal Verbs",
+    "description": "Find the verb that completes each phrasal verb.",
+    "focus": "grammar",
+    "difficulty": "hard",
+    "level": "B2",
+    "timeLimit": 0,
+    "published": true,
+    "words": [
+      {
+        "answer": "GIVE",
+        "clue": "___ up: to stop trying",
+        "note": "'Don't give up!' — a common phrase of encouragement.",
+        "example": "I gave up sugar for a month."
+      },
+      {
+        "answer": "TURN",
+        "clue": "___ down: to refuse an offer",
+        "note": "'Turn down' also means to lower the volume: 'Turn down the music!'",
+        "example": "She turned down the job offer."
+      },
+      {
+        "answer": "TAKE",
+        "clue": "___ off: what a plane does when it leaves the ground",
+        "note": "Also means to remove clothes: 'take off your shoes'.",
+        "example": "The plane will take off in ten minutes."
+      },
+      {
+        "answer": "RUN",
+        "clue": "___ out of: to have nothing left",
+        "note": "'We've run out of milk' — very common at home.",
+        "example": "My phone ran out of battery."
+      },
+      {
+        "answer": "PUT",
+        "clue": "___ off: to postpone",
+        "note": "'Don't put off until tomorrow what you can do today.'",
+        "example": "They put off the meeting until Friday."
+      },
+      {
+        "answer": "BREAK",
+        "clue": "___ down: to stop working (a car or machine)",
+        "note": "Also used for emotions: 'She broke down in tears.'",
+        "example": "Our car broke down on the motorway."
+      },
+      {
+        "answer": "FIGURE",
+        "clue": "___ out: to understand or solve",
+        "note": "Informal, very common in American English.",
+        "example": "I can't figure out this puzzle."
+      },
+      {
+        "answer": "CARRY",
+        "clue": "___ on: to continue",
+        "note": "'Carry on' is also a polite 'please continue'.",
+        "example": "Carry on reading, please."
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "m-gram-plurals",
+    "categoryId": "cat-grammar",
+    "title": "Tricky Plurals",
+    "description": "Irregular and spelling-change plurals.",
+    "focus": "grammar",
+    "difficulty": "easy",
+    "level": "A2",
+    "timeLimit": 0,
+    "published": true,
+    "words": [
+      {
+        "answer": "CHILDREN",
+        "clue": "Plural of CHILD",
+        "note": "Old English plural ending -ren.",
+        "example": "The children are playing outside."
+      },
+      {
+        "answer": "MICE",
+        "clue": "Plural of MOUSE",
+        "note": "Same pattern: louse – lice.",
+        "example": "There are mice in the kitchen!"
+      },
+      {
+        "answer": "TEETH",
+        "clue": "Plural of TOOTH",
+        "note": "Vowel change: oo → ee, like foot – feet.",
+        "example": "Brush your teeth twice a day."
+      },
+      {
+        "answer": "WOMEN",
+        "clue": "Plural of WOMAN",
+        "note": "Pronounced WIM-in.",
+        "example": "Three women started the company."
+      },
+      {
+        "answer": "PEOPLE",
+        "clue": "Usual plural of PERSON",
+        "note": "'Persons' exists but is very formal.",
+        "example": "Many people visit the museum."
+      },
+      {
+        "answer": "KNIVES",
+        "clue": "Plural of KNIFE",
+        "note": "-fe / -f often becomes -ves: wife – wives, leaf – leaves.",
+        "example": "Put the knives in the drawer."
+      },
+      {
+        "answer": "CITIES",
+        "clue": "Plural of CITY",
+        "note": "Consonant + y → -ies.",
+        "example": "Tokyo and Delhi are huge cities."
+      },
+      {
+        "answer": "POTATOES",
+        "clue": "Plural of POTATO",
+        "note": "Add -es: tomato – tomatoes, hero – heroes.",
+        "example": "I peeled the potatoes."
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "m-speak-greetings",
+    "categoryId": "cat-speaking",
+    "title": "Small Talk Starters",
+    "description": "Polite words that open every conversation. Say each one aloud.",
+    "focus": "speaking",
+    "difficulty": "easy",
+    "level": "A1",
+    "timeLimit": 0,
+    "published": true,
+    "words": [
+      {
+        "answer": "HELLO",
+        "clue": "The most common greeting",
+        "note": "Informal options: hi, hey. Formal: good morning.",
+        "example": "Hello, nice to meet you!"
+      },
+      {
+        "answer": "PLEASE",
+        "clue": "Magic word that makes a request polite",
+        "note": "Put it at the start or end: 'Please sit down' / 'Water, please.'",
+        "example": "Could you help me, please?"
+      },
+      {
+        "answer": "THANKS",
+        "clue": "Informal way to say 'thank you'",
+        "note": "Reply with 'You're welcome' or 'No problem'.",
+        "example": "Thanks a lot for your help!"
+      },
+      {
+        "answer": "SORRY",
+        "clue": "Word to apologise or to ask someone to repeat",
+        "note": "'Sorry?' with rising intonation means 'Can you repeat that?'",
+        "example": "Sorry, I'm late."
+      },
+      {
+        "answer": "WELCOME",
+        "clue": "You're ___: reply to 'thank you'",
+        "note": "Also used to greet guests: 'Welcome to our home!'",
+        "example": "You're welcome, any time."
+      },
+      {
+        "answer": "GOODBYE",
+        "clue": "What you say when you leave",
+        "note": "Casual: bye, see you, take care.",
+        "example": "Goodbye and have a nice day!"
+      },
+      {
+        "answer": "EXCUSE",
+        "clue": "___ me: to get attention politely",
+        "note": "Use it before a question to a stranger.",
+        "example": "Excuse me, where is the station?"
+      },
+      {
+        "answer": "WEATHER",
+        "clue": "British people's favourite small-talk topic",
+        "note": "'Lovely weather, isn't it?' — a classic opener.",
+        "example": "What's the weather like today?"
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "m-speak-restaurant",
+    "categoryId": "cat-speaking",
+    "title": "At the Restaurant",
+    "description": "Order food, ask for the bill and leave a tip.",
+    "focus": "speaking",
+    "difficulty": "easy",
+    "level": "A2",
+    "timeLimit": 0,
+    "published": true,
+    "words": [
+      {
+        "answer": "MENU",
+        "clue": "List of dishes you can order",
+        "note": "Ask: 'Could we see the menu, please?'",
+        "example": "The menu has three vegetarian dishes."
+      },
+      {
+        "answer": "WAITER",
+        "clue": "Person who brings your food",
+        "note": "Gender-neutral: server.",
+        "example": "The waiter recommended the fish."
+      },
+      {
+        "answer": "BILL",
+        "clue": "Ask for the ___ when you want to pay (British English)",
+        "note": "Americans say 'the check'.",
+        "example": "Could we have the bill, please?"
+      },
+      {
+        "answer": "ORDER",
+        "clue": "To ask for food in a restaurant",
+        "note": "'Are you ready to order?' 'Yes, I'll have the soup.'",
+        "example": "I'd like to order a salad."
+      },
+      {
+        "answer": "DESSERT",
+        "clue": "Sweet course at the end of a meal",
+        "note": "Don't confuse with 'desert' (sand). Dessert has two S's — 'sweet stuff'.",
+        "example": "What would you like for dessert?"
+      },
+      {
+        "answer": "STARTER",
+        "clue": "Small dish before the main course (UK)",
+        "note": "Americans say 'appetizer'.",
+        "example": "We shared a starter."
+      },
+      {
+        "answer": "TIP",
+        "clue": "Extra money for good service",
+        "note": "In the US it's usually 15–20%.",
+        "example": "We left a ten percent tip."
+      },
+      {
+        "answer": "VEGETARIAN",
+        "clue": "Someone who doesn't eat meat",
+        "note": "A vegan eats no animal products at all.",
+        "example": "Do you have any vegetarian options?"
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "m-speak-idioms",
+    "categoryId": "cat-speaking",
+    "title": "Everyday Idioms",
+    "description": "Complete the idiom, then use it in a sentence out loud.",
+    "focus": "speaking",
+    "difficulty": "hard",
+    "level": "B2",
+    "timeLimit": 0,
+    "published": true,
+    "words": [
+      {
+        "answer": "ICE",
+        "clue": "Break the ___: start a conversation with strangers",
+        "note": "Icebreaker games help groups relax.",
+        "example": "He told a joke to break the ice."
+      },
+      {
+        "answer": "CAKE",
+        "clue": "A piece of ___: very easy",
+        "note": "Similar: 'easy as pie'.",
+        "example": "The test was a piece of cake."
+      },
+      {
+        "answer": "WEATHER",
+        "clue": "Under the ___: feeling slightly ill",
+        "note": "Originally a sailors' expression.",
+        "example": "I'm feeling a bit under the weather."
+      },
+      {
+        "answer": "MOON",
+        "clue": "Once in a blue ___: very rarely",
+        "note": "A 'blue moon' is a second full moon in one month.",
+        "example": "I only eat fast food once in a blue moon."
+      },
+      {
+        "answer": "BEANS",
+        "clue": "Spill the ___: reveal a secret",
+        "note": "Very informal, popular in social media slang.",
+        "example": "Come on, spill the beans!"
+      },
+      {
+        "answer": "LEG",
+        "clue": "Cost an arm and a ___: very expensive",
+        "note": "Never literal!",
+        "example": "That phone cost an arm and a leg."
+      },
+      {
+        "answer": "COURT",
+        "clue": "The ball is in your ___: it's your decision now",
+        "note": "From tennis.",
+        "example": "I've made my offer — the ball is in your court."
+      },
+      {
+        "answer": "SACK",
+        "clue": "Hit the ___: go to bed",
+        "note": "'Get the sack' means to lose your job — different idiom!",
+        "example": "I'm tired, I'm going to hit the sack."
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "m-world-capitals",
+    "categoryId": "cat-world",
+    "title": "World Capitals",
+    "description": "One capital city from every corner of the globe.",
+    "focus": "knowledge",
+    "difficulty": "easy",
+    "level": "A2",
+    "timeLimit": 240,
+    "published": true,
+    "words": [
+      {
+        "answer": "TASHKENT",
+        "clue": "Capital of Uzbekistan",
+        "note": "Its name means 'stone city'.",
+        "example": "Tashkent has a beautiful metro system."
+      },
+      {
+        "answer": "TOKYO",
+        "clue": "Capital of Japan",
+        "note": "The Greater Tokyo Area is the world's largest metropolitan area.",
+        "example": "Tokyo hosted the 2020 Olympics in 2021."
+      },
+      {
+        "answer": "CAIRO",
+        "clue": "Capital of Egypt, on the river Nile",
+        "note": "Its Arabic name, al-Qāhira, means 'the victorious'.",
+        "example": "Cairo is the largest city in Africa."
+      },
+      {
+        "answer": "OTTAWA",
+        "clue": "Capital of Canada (not Toronto!)",
+        "note": "Queen Victoria chose it in 1857.",
+        "example": "Parliament Hill is in Ottawa."
+      },
+      {
+        "answer": "CANBERRA",
+        "clue": "Capital of Australia (not Sydney!)",
+        "note": "It was built as a compromise between Sydney and Melbourne.",
+        "example": "Canberra is a planned city."
+      },
+      {
+        "answer": "LONDON",
+        "clue": "Capital of the United Kingdom",
+        "note": "The Romans called it Londinium.",
+        "example": "London has over 170 museums."
+      },
+      {
+        "answer": "MADRID",
+        "clue": "Capital of Spain",
+        "note": "It sits almost exactly in the centre of the country.",
+        "example": "The Prado museum is in Madrid."
+      },
+      {
+        "answer": "BRASILIA",
+        "clue": "Capital of Brazil since 1960",
+        "note": "Designed in the shape of an aeroplane (or a bird).",
+        "example": "Brasilia was built in just 41 months."
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "m-world-nature",
+    "categoryId": "cat-world",
+    "title": "Wonders of Nature",
+    "description": "Mountains, rivers, deserts and seas.",
+    "focus": "knowledge",
+    "difficulty": "medium",
+    "level": "B1",
+    "timeLimit": 0,
+    "published": true,
+    "words": [
+      {
+        "answer": "EVEREST",
+        "clue": "World's highest mountain",
+        "note": "8,849 metres high, on the border of Nepal and China.",
+        "example": "Climbing Everest takes about two months."
+      },
+      {
+        "answer": "AMAZON",
+        "clue": "Rainforest and river in South America",
+        "note": "The Amazon carries more water than any other river.",
+        "example": "The Amazon is home to millions of species."
+      },
+      {
+        "answer": "SAHARA",
+        "clue": "Largest hot desert in the world",
+        "note": "'Sahara' means 'desert' in Arabic, so 'Sahara Desert' is a bit repetitive!",
+        "example": "The Sahara is almost as big as the USA."
+      },
+      {
+        "answer": "NILE",
+        "clue": "Long river flowing north through Egypt",
+        "note": "Usually called the longest river in the world (about 6,650 km).",
+        "example": "Ancient Egypt depended on the Nile."
+      },
+      {
+        "answer": "PACIFIC",
+        "clue": "Largest and deepest ocean",
+        "note": "Magellan named it 'peaceful' (pacific).",
+        "example": "The Pacific covers a third of Earth's surface."
+      },
+      {
+        "answer": "VOLCANO",
+        "clue": "Mountain that can erupt with lava",
+        "note": "Plural: volcanoes. From Vulcan, the Roman god of fire.",
+        "example": "The volcano erupted last year."
+      },
+      {
+        "answer": "GLACIER",
+        "clue": "Slowly moving river of ice",
+        "note": "Pronounced GLAY-see-er (UK) or GLAY-sher (US).",
+        "example": "The glacier is melting quickly."
+      },
+      {
+        "answer": "ARAL",
+        "clue": "Central Asian sea that has shrunk dramatically",
+        "note": "Once the fourth-largest lake on Earth, it lost most of its water after the 1960s.",
+        "example": "Ships now lie in the sand of the old Aral Sea."
+      }
+    ],
+    "createdAt": "2026-10-11T00:00:00.000Z",
+    "updatedAt": "2026-10-11T00:00:00.000Z"
+  }
+]

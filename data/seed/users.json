@@ -1,0 +1,18 @@
+[
+  {
+    "id": "u-admin",
+    "name": "Admin",
+    "email": "admin@wordgame.dev",
+    "passwordHash": "$2b$10$3JeHXpcBWN6Zr7AY29Gy8elQkQejPlbQ36U85yo00y8aFe1RNsAZ2",
+    "role": "admin",
+    "createdAt": "2026-10-11T00:00:00.000Z"
+  },
+  {
+    "id": "u-demo",
+    "name": "Demo Learner",
+    "email": "demo@wordgame.dev",
+    "passwordHash": "$2b$10$fVlLKqw54OqonYpthHmU3.xcLZJSAzOp148rgnrBGJhU6N65FkUJ2",
+    "role": "user",
+    "createdAt": "2026-10-11T00:00:00.000Z"
+  }
+]
